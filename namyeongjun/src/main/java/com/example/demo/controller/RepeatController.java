@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -28,21 +26,7 @@ public class RepeatController {
     }
 
     @PostMapping("/string/repeat")
-    public ResponseEntity<?> repeatString(@Valid @RequestBody RepeatRequestDto request, BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            List<ErrorResponseDto.ValidationErrorDto> validationErrors = new ArrayList<>();
-            for(FieldError error : bindingResult.getFieldErrors()) {
-                validationErrors.add(new ErrorResponseDto.ValidationErrorDto(error.getField(), error.getDefaultMessage()));
-            }
-
-            ErrorResponseDto errorReponseDto = new ErrorResponseDto(HttpStatus.BAD_REQUEST.value(),"Validation",validationErrors);
-
-            return ResponseEntity.badRequest().body(errorReponseDto);
-        }
-
-
-
-        return ResponseEntity.ok(repeatService.getRepeat(request.getValue()));
+    public ResponseEntity<RepeatResponseDto> repeatString(@Valid @RequestBody RepeatRequestDto request) {
+        return ResponseEntity.ok(repeatService.getRepeat(request.value()));
     }
 }
