@@ -1,0 +1,83 @@
+[33mcommit 2e455092beb18aad89cac13b82933d46d9220277[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m나명준/1주차[m[33m, [m[1;31morigin/나명준/1주차[m[33m)[m
+Author: Nanajun22 <skaudwns3@gmail.com>
+Date:   Tue Mar 24 19:51:29 2026 +0900
+
+    record 타입 변환
+
+[33mcommit e0d4ae7ef53d53c10bebfa493f26fd93f2155314[m
+Author: Nanajun22 <skaudwns3@gmail.com>
+Date:   Tue Mar 24 15:03:37 2026 +0900
+
+    패키지 생성
+
+[33mcommit 197bbf5bafab40c05a1021b204d547a83c80633a[m
+Author: Nanajun22 <skaudwns3@gmail.com>
+Date:   Sat Mar 21 19:25:59 2026 +0900
+
+    역할 분리
+
+[33mcommit 7de2e3b8988449f510cf41e8004e9054d987ce3c[m
+Author: Nanajun22 <skaudwns3@gmail.com>
+Date:   Sat Mar 21 17:38:13 2026 +0900
+
+    상태 코드 수정
+
+[33mcommit fe7b40eadd5e33c4ed1f57509ce747e19653d6cb[m
+Author: Nanajun22 <skaudwns3@gmail.com>
+Date:   Fri Mar 20 02:36:42 2026 +0900
+
+    1주차
+
+[33mcommit 56f05b1e77bc0c8efdf7c8dfff7ab6ea3ce9cc54[m[33m ([m[1;31morigin/나명준/main[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32m나명준/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Eunseo Kim <kimeunseo040@gmail.com>
+Date:   Thu Mar 19 23:51:02 2026 +0900
+
+    Update team member list in README.md
+
+[33mcommit ef8e8218c2e94dcee63d5e30ca45c81a00f1c596[m
+Author: luke0408 <zjvl324@gmail.com>
+Date:   Thu Mar 19 12:38:18 2026 +0900
+
+    chore: create gitignore file
+
+[33mcommit 65ee92d07b9db25a11ff69d9570998d6d7d0e726[m
+Author: luke0408 <zjvl324@gmail.com>
+Date:   Thu Mar 19 12:38:03 2026 +0900
+
+    docs: create mission template (issue & pr)
+
+[33mcommit 1afa8a6567801e81800af532acdfc037de597ea5[m
+Author: luke0408 <zjvl324@gmail.com>
+Date:   Thu Mar 19 12:37:15 2026 +0900
+
+    docs: readme update
+
+[33mcommit fd6f0b3ac5725829299574ac0579f40bc9d7342b[m
+Author: Eunseo Kim <kimeunseo040@gmail.com>
+Date:   Thu Mar 19 12:02:09 2026 +0900
+
+    Clean up README by removing duplicate section
+    
+    Removed duplicate mission requirements section from README.
+
+[33mcommit bb820213c471e9bb51d8b280bc55c0bf060d091f[m
+Author: Eunseo Kim <kimeunseo040@gmail.com>
+Date:   Thu Mar 19 12:01:09 2026 +0900
+
+    Update README with project goals and requirements
+    
+    Added project goals, requirements, and team structure to README.
+
+[33mcommit 76bb4129b1a26cf3dea7f4935310e6d9db81c8f4[m[33m ([m[1;31morigin/강지훈/main[m[33m)[m
+Author: Eunseo Kim <kimeunseo040@gmail.com>
+Date:   Tue Mar 17 20:49:53 2026 +0900
+
+    Update README with project details and guidelines
+    
+    Add project overview and mission requirements.
+
+[33mcommit b7d0b36b47f84061c4a6e56f72a31b22b3a7aa0f[m
+Author: Eunseo Kim <kimeunseo040@gmail.com>
+Date:   Tue Mar 17 20:46:47 2026 +0900
+
+    Initial commit
