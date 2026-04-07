@@ -1,8 +1,8 @@
-package com.example.demo.entity;
+package com.example.leets7th.domain.user.domain;
 
 
 
-import com.example.demo.entity.common.BaseTimeEntity;
+import com.example.leets7th.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;

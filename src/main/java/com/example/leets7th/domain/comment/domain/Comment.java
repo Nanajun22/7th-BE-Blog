@@ -1,19 +1,18 @@
-package com.example.demo.entity;
+package com.example.leets7th.domain.comment.domain;
 
 
-import com.example.demo.entity.common.BaseTimeEntity;
+import com.example.leets7th.global.common.BaseTimeEntity;
+import com.example.leets7th.domain.user.domain.User;
+import com.example.leets7th.domain.post.domain.Post;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
-import org.hibernate.envers.Audited;
 
 
-@Entity @Table(name = "comments",indexes = {
-        @Index(name = "idx_comments_deleted_at",columnList = "deleted_at")
-})
+@Entity @Table(name = "comments")
 @SQLDelete(sql = "UPDATE comments SET deleted_at = NOW() WHERE comment_id = ?")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -40,7 +39,7 @@ public class Comment extends BaseTimeEntity {
 
 
     @Builder
-    private Comment(String content,User user,Post post,Comment rootComment) {
+    private Comment(String content, User user, Post post, Comment rootComment) {
         this.content =content;
         this.user = user;
         this.post = post;

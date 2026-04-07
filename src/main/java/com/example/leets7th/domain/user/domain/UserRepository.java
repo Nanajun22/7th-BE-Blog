@@ -1,6 +1,5 @@
-package com.example.demo.repository;
+package com.example.leets7th.domain.user.domain;
 
-import com.example.demo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

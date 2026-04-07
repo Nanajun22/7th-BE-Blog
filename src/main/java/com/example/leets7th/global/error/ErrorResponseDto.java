@@ -1,10 +1,8 @@
-    package com.example.demo.dto;
+    package com.example.leets7th.global.error;
 
     import com.fasterxml.jackson.annotation.JsonInclude;
-    import jakarta.servlet.http.HttpServletRequest;
 
 
-    import java.net.http.HttpRequest;
     import java.util.List;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

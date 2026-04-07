@@ -1,8 +1,8 @@
-package com.example.demo.controller;
+package com.example.leets7th.domain.repeat.controller;
 
-import com.example.demo.dto.RepeatRequestDto;
-import com.example.demo.dto.RepeatResponseDto;
-import com.example.demo.service.RepeatService;
+import com.example.leets7th.domain.repeat.dto.RepeatRequestDto;
+import com.example.leets7th.domain.repeat.dto.RepeatResponseDto;
+import com.example.leets7th.domain.repeat.service.RepeatService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

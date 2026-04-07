@@ -1,4 +1,4 @@
-package com.example.demo.annotation;
+package com.example.leets7th.global.annotation;
 
 
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package com.example.demo.aspect;
+package com.example.leets7th.global.aspect;
 
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;

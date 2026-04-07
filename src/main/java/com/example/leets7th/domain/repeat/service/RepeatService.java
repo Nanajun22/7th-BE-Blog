@@ -1,5 +1,5 @@
-package com.example.demo.service;
-import com.example.demo.dto.RepeatResponseDto;
+package com.example.leets7th.domain.repeat.service;
+import com.example.leets7th.domain.repeat.dto.RepeatResponseDto;
 import org.springframework.stereotype.Service;
 
 @Service

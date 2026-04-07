@@ -1,4 +1,4 @@
-package com.example.demo.entity.common;
+package com.example.leets7th.global.common;
 
 
 import jakarta.persistence.Column;

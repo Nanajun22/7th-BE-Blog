@@ -1,14 +1,14 @@
-package com.example.demo.entity;
+package com.example.leets7th.domain.post.domain;
 
 
-import com.example.demo.entity.common.BaseTimeEntity;
+import com.example.leets7th.domain.user.domain.User;
+import com.example.leets7th.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
-import org.hibernate.envers.Audited;
 
 
 @Entity @Table(name = "posts", indexes = {

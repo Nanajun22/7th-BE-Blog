@@ -1,8 +1,7 @@
-package com.example.demo.exception;
+package com.example.leets7th.global.error;
 
 
 
-import com.example.demo.dto.ErrorResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

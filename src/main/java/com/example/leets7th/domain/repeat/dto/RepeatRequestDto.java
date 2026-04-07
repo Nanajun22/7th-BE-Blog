@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.example.leets7th.domain.repeat.dto;
 
 
 import jakarta.validation.constraints.NotBlank;
