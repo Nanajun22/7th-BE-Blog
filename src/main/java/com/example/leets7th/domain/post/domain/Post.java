@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
 
 
-@Entity @Table(name = "posts", indexes = {
-        @Index(name = "idx_posts_deleted_at", columnList = "deleted_at")
-})
+@Entity @Table(name = "posts")
 @SQLDelete(sql = "UPDATE posts SET deleted_at = NOW() WHERE posts_id = ?")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter

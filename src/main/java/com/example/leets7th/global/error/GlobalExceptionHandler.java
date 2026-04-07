@@ -2,6 +2,8 @@ package com.example.leets7th.global.error;
 
 
 
+import com.example.leets7th.global.code.ErrorCode;
+import com.example.leets7th.global.response.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -16,16 +18,20 @@ import java.util.List;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponseDto> handleValidationException(MethodArgumentNotValidException ex) {
+    public ResponseEntity<ApiResponse<List<ErrorResponseDto.ValidationErrorDto>>> handleValidationException(MethodArgumentNotValidException ex) {
 
         List<ErrorResponseDto.ValidationErrorDto> validationErrors = new ArrayList<>();
         for(FieldError error : ex.getBindingResult().getFieldErrors()) {
-            validationErrors.add(new ErrorResponseDto.ValidationErrorDto(error.getField(), error.getDefaultMessage()));
+            validationErrors.add(new ErrorResponseDto.ValidationErrorDto(error.getField(),error.getRejectedValue().toString(),error.getDefaultMessage()));
         }
 
-        ErrorResponseDto errorReponseDto = new ErrorResponseDto(HttpStatus.BAD_REQUEST.value(),"Validation",validationErrors);
 
-        return ResponseEntity.badRequest().body(errorReponseDto);
+        return ResponseEntity.badRequest().body(ApiResponse.failure(ErrorCode.INTERNAL_SERVER_ERROR,validationErrors));
+    }
+
+    @ExceptionHandler(GlobalException.class)
+    public ResponseEntity<ApiResponse<Void>> handleGlobalException(GlobalException ex) {
+        return ResponseEntity.status(ex.getBaseCode().getStatus()).body(ApiResponse.failure(ex.getBaseCode()));
     }
 
 }

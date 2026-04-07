@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class SoftDeleteAspect {
     private final EntityManager entityManager;
 
-    @Before("execution(* com.example.demo.service..*.*(..))")
+    @Before("execution(* com.example.leets7th.domain..*.*(..))")
     public void enableSoftDeleteFilter() {
         Session session = entityManager.unwrap(Session.class);
         session.enableFilter("deletedFilter");
@@ -23,7 +23,7 @@ public class SoftDeleteAspect {
     }
 
 
-    @Around("@annotation(com.example.demo.annotation.DisableSoftDelete)")
+    @Around("@annotation(com.example.leets7th.global.annotation.DisableSoftDelete)")
     public Object disableSoftDeleteFilter(ProceedingJoinPoint joinPoint) throws Throwable {
         Session session = entityManager.unwrap(Session.class);
         session.disableFilter("deletedFilter");
