@@ -4,10 +4,10 @@ import com.example.leets7th.domain.post.Service.PostService;
 import com.example.leets7th.domain.post.dto.PostRequestDto;
 import com.example.leets7th.domain.post.dto.PostResponseDto;
 import com.example.leets7th.global.code.SuccessCode;
-import com.example.leets7th.global.common.BaseCode;
 import com.example.leets7th.global.response.ApiResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +20,8 @@ public class PostController {
 
 
     @GetMapping("/{postId}")
-    public ApiResponse<PostResponseDto.ReadPost> getPost(@PathVariable Long postId) {
+    public ApiResponse<PostResponseDto.ReadPost> getPost(@PathVariable Long postId
+    ) {
         return ApiResponse.success(SuccessCode.POST_READ_OK,postService.getPost(postId));
     }
 
@@ -29,20 +30,28 @@ public class PostController {
         return ApiResponse.success(SuccessCode.POST_LIST_READ_OK,postService.getPostList());
     }
 
+
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ApiResponse<PostResponseDto.CreatePost> createPost(PostRequestDto.Write request,Long userId) {
+    public ApiResponse<PostResponseDto.CreatePost> createPost(@RequestBody @Valid PostRequestDto.Create request,
+                                                              @RequestBody  Long userId
+    ) {
         return ApiResponse.success(SuccessCode.POST_CREATED,postService.createPost(request,userId));
     }
 
     @PatchMapping("/{postId}")
-    public ApiResponse<PostResponseDto.UpdatePost> createPost(@PathVariable Long postId, PostRequestDto.Write request) {
-        return ApiResponse.success(SuccessCode.POST_UPDATE_OK,postService.updatePost(request,postId));
+    public ApiResponse<PostResponseDto.UpdatePost> createPost(@PathVariable Long postId,
+                                                              @RequestBody @Valid PostRequestDto.Update request,
+                                                              @RequestBody Long userId
+    ) {
+        return ApiResponse.success(SuccessCode.POST_UPDATE_OK,postService.updatePost(request,postId,userId));
     }
 
 
     @DeleteMapping("/{postId}")
-    public ApiResponse<Void> deletePost(@PathVariable Long postId) {
-        postService.deletePost(postId);
+    public ApiResponse<Void> deletePost(@PathVariable Long postId,
+                                        @RequestBody Long userId) {
+        postService.deletePost(postId,userId);
         return ApiResponse.success(SuccessCode.POST_DELETE_OK);
     }
 

@@ -13,10 +13,10 @@ public class PostResponseDto {
 
     public record CreatePost(Long postId,
                              String title,
-                           String content,
-                           String nickname,
-                           LocalDateTime createdAt,
-                           LocalDateTime updatedAt) {
+                             String content,
+                             String nickname,
+                             LocalDateTime createdAt,
+                             LocalDateTime updatedAt) {
 
     }
 
@@ -28,10 +28,11 @@ public class PostResponseDto {
 
     }
 
-    public record ReadPostList(String title,
-                             String content,
-                             LocalDateTime createdAt,
-                             LocalDateTime updatedAt) {
+    public record ReadPostList(Long postId,
+                               String title,
+                               String nickname,
+                               LocalDateTime createdAt,
+                               LocalDateTime updatedAt) {
 
     }
 

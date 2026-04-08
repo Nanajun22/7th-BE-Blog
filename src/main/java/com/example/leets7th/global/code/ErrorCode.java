@@ -1,11 +1,12 @@
 package com.example.leets7th.global.code;
 
 import com.example.leets7th.global.common.BaseCode;
-import lombok.AllArgsConstructor;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
-@AllArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 public enum ErrorCode implements BaseCode {
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR,"COMMON500_1","예기치 않은 서버 에러가 발생했습니다."),
@@ -19,6 +20,8 @@ public enum ErrorCode implements BaseCode {
     USER_NOT_FOUND(HttpStatus.NOT_FOUND,"USER404_1","존재하지 않는 유저입니다."),
 
 
+    POST_UPDATE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_1","수정 권한이 없습니다."),
+    POST_DELETE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_2","삭제 권한이 없습니다."),
     POST_NOT_FOUND(HttpStatus.NOT_FOUND,"POST404_1","해당 게시글이 존재하지 않습니다.");
 
     private final HttpStatus status;

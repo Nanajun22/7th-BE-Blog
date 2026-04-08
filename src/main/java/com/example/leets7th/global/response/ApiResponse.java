@@ -1,5 +1,6 @@
 package com.example.leets7th.global.response;
 
+
 import com.example.leets7th.global.common.BaseCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,6 +14,7 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @JsonPropertyOrder({"isSuccess","code","message","data"})
 public class ApiResponse <T> {
+
 
     @JsonProperty("isSuccess")
     private final boolean isSuccess;

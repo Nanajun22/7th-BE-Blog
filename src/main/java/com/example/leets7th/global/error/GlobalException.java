@@ -5,7 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public class GlobalException extends RuntimeException{
     private final BaseCode baseCode;
+
+    public GlobalException(BaseCode baseCode) {
+        super(baseCode.getMessage());
+        this.baseCode =baseCode;
+    }
 }
