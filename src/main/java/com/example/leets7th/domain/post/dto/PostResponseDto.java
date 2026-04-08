@@ -28,9 +28,8 @@ public class PostResponseDto {
 
     }
 
-    public record ReadAllPost(String title,
+    public record ReadPostList(String title,
                              String content,
-                             String nickname,
                              LocalDateTime createdAt,
                              LocalDateTime updatedAt) {
 

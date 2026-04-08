@@ -1,7 +1,6 @@
 package com.example.leets7th.domain.post.controller;
 
 import com.example.leets7th.domain.post.Service.PostService;
-import com.example.leets7th.domain.post.code.PostErrorCode;
 import com.example.leets7th.domain.post.dto.PostRequestDto;
 import com.example.leets7th.domain.post.dto.PostResponseDto;
 import com.example.leets7th.global.code.SuccessCode;
@@ -26,7 +25,7 @@ public class PostController {
     }
 
     @GetMapping
-    public ApiResponse<List<PostResponseDto.ReadAllPost>> getPostList() {
+    public ApiResponse<List<PostResponseDto.ReadPostList>> getPostList() {
         return ApiResponse.success(SuccessCode.POST_LIST_READ_OK,postService.getPostList());
     }
 

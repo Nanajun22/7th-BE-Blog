@@ -1,6 +1,6 @@
 package com.example.leets7th.domain.post.Service;
 
-import com.example.leets7th.domain.post.code.PostErrorCode;
+
 import com.example.leets7th.domain.post.domain.Post;
 import com.example.leets7th.domain.post.domain.PostRepository;
 import com.example.leets7th.domain.post.dto.PostRequestDto;
@@ -26,7 +26,7 @@ public class PostService {
 
 
     public PostResponseDto.ReadPost getPost(Long postId) {
-        Post post = postRepository.findById(postId).orElseThrow(() -> new GlobalException(PostErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findById(postId).orElseThrow(() -> new GlobalException(ErrorCode.POST_NOT_FOUND));
 
 
         return new PostResponseDto.ReadPost(post.getTitle(),
@@ -36,16 +36,15 @@ public class PostService {
                 post.getUpdatedAt());
     }
 
-    public List<PostResponseDto.ReadAllPost> getPostList() {
+    public List<PostResponseDto.ReadPostList> getPostList() {
         List<Post> posts = postRepository.findAll();
 
-        List<PostResponseDto.ReadAllPost> postDtos = new ArrayList<>();
+        List<PostResponseDto.ReadPostList> postDtos = new ArrayList<>();
 
         for(Post post : posts) {
-            PostResponseDto.ReadAllPost postDto = new PostResponseDto.ReadAllPost(
+            PostResponseDto.ReadPostList postDto = new PostResponseDto.ReadPostList(
                     post.getTitle(),
                     post.getContent(),
-                    post.getUser().getName(),
                     post.getCreatedAt(),
                     post.getUpdatedAt()
             );
@@ -77,8 +76,10 @@ public class PostService {
 
     @Transactional
     public PostResponseDto.UpdatePost updatePost(PostRequestDto.Write request,Long postId) {
-        Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(PostErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
         post.modifyPost(request.title(), request.content());
+
+
 
         return new PostResponseDto.UpdatePost(post.getTitle(),
                 post.getContent(),
@@ -89,7 +90,7 @@ public class PostService {
 
     @Transactional
     public void deletePost(Long postId) {
-        Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(PostErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
         postRepository.delete(post);
 
     }
