@@ -29,71 +29,36 @@ public class PostService {
 
     public PostResponseDto.ReadPost getPost(Long postId) {
         Post post = postRepository.findById(postId).orElseThrow(() -> new GlobalException(ErrorCode.POST_NOT_FOUND));
-
-
-        return new PostResponseDto.ReadPost(post.getTitle(),
-                post.getContent(),
-                post.getUser().getName(),
-                post.getCreatedAt(),
-                post.getUpdatedAt());
+        return PostResponseDto.ReadPost.from(post);
     }
 
     public List<PostResponseDto.ReadPostList> getPostList() {
-        List<Post> posts = postRepository.findPostListWithUser();
-
-        List<PostResponseDto.ReadPostList> postDtos = new ArrayList<>();
-
-        for(Post post : posts) {
-            PostResponseDto.ReadPostList postDto = new PostResponseDto.ReadPostList(
-                    post.getId(),
-                    post.getTitle(),
-                    post.getUser().getName(),
-                    post.getCreatedAt(),
-                    post.getUpdatedAt()
-            );
-
-            postDtos.add(postDto);
-
-        }
-
-        return postDtos;
+        return postRepository.findPostListWithUser()
+                .stream()
+                .map(PostResponseDto.ReadPostList::from)
+                .toList();
     }
 
     @Transactional
     public PostResponseDto.CreatePost createPost(PostRequestDto.Create request,Long userId) {
-        Post post = Post.builder()
-                .title(request.title())
-                .content(request.content())
-                .user(userService.getUser(userId))
-                .build();
+        User user = userService.getUser(userId);
+        Post post = request.toEntity(user);
 
         postRepository.save(post);
 
-        return new PostResponseDto.CreatePost(post.getId(),
-                post.getTitle(),
-                post.getContent(),
-                post.getUser().getName(),
-                post.getCreatedAt(),
-                post.getUpdatedAt());
+        return PostResponseDto.CreatePost.from(post);
     }
 
     @Transactional
     public PostResponseDto.UpdatePost updatePost(PostRequestDto.Update request,Long postId,Long userId) {
         Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
 
-
         if(!userId.equals(post.getUser().getId())) {
             throw new GlobalException(ErrorCode.POST_UPDATE_NO_PERMISSION);
         }
 
         post.modifyPost(request.title(), request.content());
-
-
-        return new PostResponseDto.UpdatePost(post.getTitle(),
-                post.getContent(),
-                post.getUser().getName(),
-                post.getCreatedAt(),
-                post.getUpdatedAt());
+        return PostResponseDto.UpdatePost.from(post);
     }
 
     @Transactional
