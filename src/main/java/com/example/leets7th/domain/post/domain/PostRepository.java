@@ -7,11 +7,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post,Long> {
 
-    @Query("select p from Post p join fetch p.user")
+    @Query("SELECT p FROM Post p JOIN FETCH p.user")
     List<Post> findPostListWithUser();
+
+    @Query("SELECT p FROM Post p JOIN FETCH p.user WHERE p.id = :postId")
+    Optional<Post> findByIdWithUser(@Param("postId")Long postId);
 
     @Modifying(clearAutomatically = true)
     @Query("UPDATE Post p SET p.deletedAt = CURRENT_TIMESTAMP WHERE p.user.id = : uid")

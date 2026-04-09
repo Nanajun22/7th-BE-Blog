@@ -4,8 +4,11 @@ import com.example.leets7th.domain.post.domain.Post;
 import com.example.leets7th.domain.user.domain.User;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 public class PostRequestDto {
+
 
 
 
@@ -25,6 +28,7 @@ public class PostRequestDto {
                     .build();
         }
     }
+
 
     public record Update(
             @NotBlank(message = "제목을 입력해주세요.")

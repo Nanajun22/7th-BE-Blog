@@ -28,7 +28,7 @@ public class PostService {
 
 
     public PostResponseDto.ReadPost getPost(Long postId) {
-        Post post = postRepository.findById(postId).orElseThrow(() -> new GlobalException(ErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findByIdWithUser(postId).orElseThrow(() -> new GlobalException(ErrorCode.POST_NOT_FOUND));
         return PostResponseDto.ReadPost.from(post);
     }
 
@@ -41,9 +41,7 @@ public class PostService {
 
     @Transactional
     public PostResponseDto.CreatePost createPost(PostRequestDto.Create request,Long userId) {
-        User user = userService.getUser(userId);
-        Post post = request.toEntity(user);
-
+        Post post = request.toEntity(userService.getUser(userId));
         postRepository.save(post);
 
         return PostResponseDto.CreatePost.from(post);
@@ -51,7 +49,7 @@ public class PostService {
 
     @Transactional
     public PostResponseDto.UpdatePost updatePost(PostRequestDto.Update request,Long postId,Long userId) {
-        Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findByIdWithUser(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
 
         if(!userId.equals(post.getUser().getId())) {
             throw new GlobalException(ErrorCode.POST_UPDATE_NO_PERMISSION);
@@ -63,7 +61,7 @@ public class PostService {
 
     @Transactional
     public void deletePost(Long postId,Long userId) {
-        Post post = postRepository.findById(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
+        Post post = postRepository.findByIdWithUser(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
 
         if(!userId.equals(post.getUser().getId())){
             throw new GlobalException(ErrorCode.POST_DELETE_NO_PERMISSION);

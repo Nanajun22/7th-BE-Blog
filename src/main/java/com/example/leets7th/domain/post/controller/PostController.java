@@ -20,8 +20,7 @@ public class PostController {
 
 
     @GetMapping("/{postId}")
-    public ApiResponse<PostResponseDto.ReadPost> getPost(@PathVariable Long postId
-    ) {
+    public ApiResponse<PostResponseDto.ReadPost> getPost(@PathVariable Long postId) {
         return ApiResponse.success(SuccessCode.POST_READ_OK,postService.getPost(postId));
     }
 
@@ -34,7 +33,7 @@ public class PostController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ApiResponse<PostResponseDto.CreatePost> createPost(@RequestBody @Valid PostRequestDto.Create request,
-                                                              @RequestBody  Long userId
+                                                              @RequestParam  Long userId
     ) {
         return ApiResponse.success(SuccessCode.POST_CREATED,postService.createPost(request,userId));
     }
@@ -42,7 +41,7 @@ public class PostController {
     @PatchMapping("/{postId}")
     public ApiResponse<PostResponseDto.UpdatePost> createPost(@PathVariable Long postId,
                                                               @RequestBody @Valid PostRequestDto.Update request,
-                                                              @RequestBody Long userId
+                                                              @RequestParam Long userId
     ) {
         return ApiResponse.success(SuccessCode.POST_UPDATE_OK,postService.updatePost(request,postId,userId));
     }
@@ -50,7 +49,7 @@ public class PostController {
 
     @DeleteMapping("/{postId}")
     public ApiResponse<Void> deletePost(@PathVariable Long postId,
-                                        @RequestBody Long userId) {
+                                        @RequestParam Long userId) {
         postService.deletePost(postId,userId);
         return ApiResponse.success(SuccessCode.POST_DELETE_OK);
     }
