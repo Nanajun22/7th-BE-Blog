@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
         }
 
 
-        return ResponseEntity.badRequest().body(ApiResponse.failure(ErrorCode.INTERNAL_SERVER_ERROR,validationErrors));
+        return ResponseEntity.badRequest().body(ApiResponse.failure(ErrorCode.VALIDATION_ERROR,validationErrors));
     }
 
     @ExceptionHandler(GlobalException.class)

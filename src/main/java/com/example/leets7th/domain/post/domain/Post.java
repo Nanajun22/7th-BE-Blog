@@ -29,9 +29,6 @@ public class Post extends BaseTimeEntity {
 
 
 
-
-
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -48,6 +45,17 @@ public class Post extends BaseTimeEntity {
         this.title = title;
         this.content = content;
     }
+
+    public static Post create(String title,String content,User user) {
+        return Post.builder()
+                .title(title)
+                .content(content)
+                .user(user)
+                .build();
+    }
+
+
+
 
 
 

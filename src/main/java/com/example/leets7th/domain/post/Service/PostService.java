@@ -7,7 +7,7 @@ import com.example.leets7th.domain.post.domain.PostRepository;
 import com.example.leets7th.domain.post.dto.PostRequestDto;
 import com.example.leets7th.domain.post.dto.PostResponseDto;
 
-import com.example.leets7th.domain.user.domain.User;
+
 import com.example.leets7th.domain.user.service.UserService;
 import com.example.leets7th.global.code.ErrorCode;
 import com.example.leets7th.global.error.GlobalException;
@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Service
@@ -41,7 +41,7 @@ public class PostService {
 
     @Transactional
     public PostResponseDto.CreatePost createPost(PostRequestDto.Create request,Long userId) {
-        Post post = request.toEntity(userService.getUser(userId));
+        Post post = Post.create(request.title(),request.content(),userService.getUser(userId));
         postRepository.save(post);
 
         return PostResponseDto.CreatePost.from(post);

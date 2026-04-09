@@ -4,8 +4,8 @@ import com.example.leets7th.domain.post.domain.Post;
 import com.example.leets7th.domain.user.domain.User;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+
+
 
 public class PostRequestDto {
 
@@ -20,13 +20,6 @@ public class PostRequestDto {
             @NotBlank(message = "내용을 입력해주세요.")
             String content
     ) {
-        public Post toEntity(User user) {
-            return Post.builder()
-                    .title(this.title())
-                    .content(this.content)
-                    .user(user)
-                    .build();
-        }
     }
 
 

@@ -20,6 +20,7 @@ public enum ErrorCode implements BaseCode {
     USER_NOT_FOUND(HttpStatus.NOT_FOUND,"USER404_1","존재하지 않는 유저입니다."),
 
 
+    POST_INPUT_NO_VALIDATION(HttpStatus.BAD_REQUEST,"POST400_3","입력값이 유효하지 않습니다."),
     POST_UPDATE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_1","수정 권한이 없습니다."),
     POST_DELETE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_2","삭제 권한이 없습니다."),
     POST_NOT_FOUND(HttpStatus.NOT_FOUND,"POST404_1","해당 게시글이 존재하지 않습니다.");
