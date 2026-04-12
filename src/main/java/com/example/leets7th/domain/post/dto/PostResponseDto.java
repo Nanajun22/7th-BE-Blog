@@ -1,15 +1,20 @@
 package com.example.leets7th.domain.post.dto;
 
 import com.example.leets7th.domain.post.domain.Post;
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PostResponseDto {
-    public record ReadPost(String title,
-                           String content,
-                           String nickname,
-                           LocalDateTime createdAt,
-                           LocalDateTime updatedAt) {
+    public record ReadPost(
+            String title,
+            String content,
+            String nickname,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
 
         public static ReadPost from (Post post) {
             return new ReadPost(post.getTitle(),
@@ -21,12 +26,13 @@ public class PostResponseDto {
 
     }
 
-    public record CreatePost(Long postId,
-                             String title,
-                             String content,
-                             String nickname,
-                             LocalDateTime createdAt,
-                             LocalDateTime updatedAt) {
+    public record CreatePost(
+            Long postId,
+            String title,
+            String content,
+            String nickname,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
 
         public static CreatePost from(Post post) {
             return new CreatePost(post.getId(),
@@ -39,11 +45,13 @@ public class PostResponseDto {
 
     }
 
-    public record UpdatePost(String title,
-                             String content,
-                             String nickname,
-                             LocalDateTime createdAt,
-                             LocalDateTime updatedAt) {
+    public record UpdatePost(
+            String title,
+            String content,
+            String nickname,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
+
         public static UpdatePost from(Post post) {
             return new UpdatePost(post.getTitle(),
                     post.getContent(),
@@ -54,11 +62,12 @@ public class PostResponseDto {
 
     }
 
-    public record ReadPostList(Long postId,
-                               String title,
-                               String nickname,
-                               LocalDateTime createdAt,
-                               LocalDateTime updatedAt) {
+    public record ReadPostList(
+            Long postId,
+            String title,
+            String nickname,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt) {
 
         public static ReadPostList from(Post post) {
             return new ReadPostList(post.getId(),

@@ -21,7 +21,8 @@ public class GlobalExceptionHandler {
 
         List<ErrorResponseDto.ValidationErrorDto> validationErrors = new ArrayList<>();
         for(FieldError error : ex.getBindingResult().getFieldErrors()) {
-            validationErrors.add(new ErrorResponseDto.ValidationErrorDto(error.getField(),error.getRejectedValue().toString(),error.getDefaultMessage()));
+            String value = (error.getRejectedValue()!=null) ? error.getRejectedValue().toString() : "";
+            validationErrors.add(new ErrorResponseDto.ValidationErrorDto(error.getField(),value,error.getDefaultMessage()));
         }
 
 
