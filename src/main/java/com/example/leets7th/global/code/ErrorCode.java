@@ -23,7 +23,12 @@ public enum ErrorCode implements BaseCode {
     POST_INPUT_NO_VALIDATION(HttpStatus.BAD_REQUEST,"POST400_3","입력값이 유효하지 않습니다."),
     POST_UPDATE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_1","수정 권한이 없습니다."),
     POST_DELETE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_2","삭제 권한이 없습니다."),
-    POST_NOT_FOUND(HttpStatus.NOT_FOUND,"POST404_1","해당 게시글이 존재하지 않습니다.");
+    POST_NOT_FOUND(HttpStatus.NOT_FOUND,"POST404_1","해당 게시글이 존재하지 않습니다."),
+
+    REPORT_ALREADY_EXIST(HttpStatus.BAD_REQUEST,"REPORT400_1","이미 신고한 대상입니다."),
+    REPORT_NOT_FOUND(HttpStatus.NOT_FOUND,"REPORT404_1","해당 신고가 존재하지 않습니다."),
+    UNSUPPORTED_CONTENT_TYPE(HttpStatus.NOT_FOUND,"REPORT404_2","지원하지 않는 대상입니다.");
+
 
     private final HttpStatus status;
     private final String code;

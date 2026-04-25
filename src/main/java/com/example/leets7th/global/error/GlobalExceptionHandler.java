@@ -2,6 +2,7 @@ package com.example.leets7th.global.error;
 
 
 
+import com.example.leets7th.domain.post.exception.PostException;
 import com.example.leets7th.global.code.ErrorCode;
 import com.example.leets7th.global.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
@@ -33,5 +34,10 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleGlobalException(GlobalException ex) {
         return ResponseEntity.status(ex.getBaseCode().getStatus()).body(ApiResponse.failure(ex.getBaseCode()));
     }
+
+
+
+
+
 
 }

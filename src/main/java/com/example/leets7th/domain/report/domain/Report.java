@@ -18,9 +18,12 @@ public class Report extends BaseTimeEntity {
     private Long id;
 
 
-    @Column(name = "report_reason",columnDefinition = "TEXT")
-    private String reportReason;
+    @Column(name = "reason",columnDefinition = "TEXT")
+    private String reason;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name ="status",nullable = false,length = 50)
+    private ReportStatus status;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "content_type",nullable = false,length = 50)
@@ -31,20 +34,32 @@ public class Report extends BaseTimeEntity {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id",nullable = false)
+    @JoinColumn(name = "reporter_id",nullable = false)
     private User reporter;
 
 
 
 
-    @Builder
-    private Report(String reportReason,ReportContentType contentType,Long contentId,User reporter) {
-        this.reportReason = reportReason;
+    @Builder(access = AccessLevel.PRIVATE)
+    private Report(String reason,ReportContentType contentType,Long contentId,User reporter) {
+        this.reason = reason;
         this.contentType =contentType;
         this.contentId = contentId;
         this.reporter = reporter;
     }
 
+    public static Report create(String reason,ReportContentType contentType,Long contentId,User reporter) {
+        return Report.builder()
+                .reason(reason)
+                .contentType(contentType)
+                .contentId(contentId)
+                .reporter(reporter)
+                .build();
+    }
+
+    public void changeStatus(ReportStatus status) {
+        this.status = status;
+    }
 
 
 }
