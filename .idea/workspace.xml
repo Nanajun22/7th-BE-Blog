@@ -5,27 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe1570b-38b0-4a5d-8519-5916e0d6f809" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/exception/PostException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/strategy/PostReportStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/ReportRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/ReportStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/dto/ReportRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/dto/ReportResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/error/ReportException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/error/ReportExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportAdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/strategy/ReportStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/strategy/PostReportStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/strategy/PostReportStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/ReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/dto/ReportRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/dto/ReportRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/strategy/ReportStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/strategy/ReportStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/code/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/code/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/code/SuccessCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/code/SuccessCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/error/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/error/GlobalExceptionHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +147,7 @@
       <option name="presentableId" value="Default" />
       <updated>1773935593667</updated>
       <workItem from="1773935594836" duration="24032000" />
-      <workItem from="1777027069393" duration="30524000" />
+      <workItem from="1777027069393" duration="38263000" />
     </task>
     <servers />
   </component>

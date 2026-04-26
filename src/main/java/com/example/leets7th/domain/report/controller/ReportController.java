@@ -6,7 +6,6 @@ import com.example.leets7th.domain.report.dto.ReportResponseDto;
 import com.example.leets7th.domain.report.service.ReportService;
 import com.example.leets7th.global.code.SuccessCode;
 import com.example.leets7th.global.response.ApiResponse;
-import com.zaxxer.hikari.util.SuspendResumeLock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +31,11 @@ public class ReportController {
 
     //신고 취소 API
     @DeleteMapping("/{reportId}")
-    public ApiResponse<Void> deleteReport() {
-
+    public ApiResponse<Void> deleteReport(
+            @PathVariable Long reportId,
+            @RequestParam Long userId
+    ) {
+        reportService.deleteReport(reportId,userId);
         return ApiResponse.success(SuccessCode.GENERAL_OK);
     }
 

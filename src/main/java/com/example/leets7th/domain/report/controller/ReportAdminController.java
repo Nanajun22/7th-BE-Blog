@@ -22,9 +22,9 @@ public class ReportAdminController {
     //신고 목록 조회 API
     @GetMapping
     public ApiResponse<List<ReportResponseDto.ReportListRes>> getReportList(
-            @RequestBody ReportRequestDto.ReportListReq request
+            @RequestParam ReportStatus status
     ) {
-        List<ReportResponseDto.ReportListRes> reports = reportAdminService.getReportList(request);
+        List<ReportResponseDto.ReportListRes> reports = reportAdminService.getReportList(status);
         return ApiResponse.success(SuccessCode.GENERAL_OK,reports);
     }
 

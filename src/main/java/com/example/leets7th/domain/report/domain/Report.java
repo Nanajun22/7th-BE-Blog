@@ -40,21 +40,17 @@ public class Report extends BaseTimeEntity {
 
 
 
-    @Builder(access = AccessLevel.PRIVATE)
+
     private Report(String reason,ReportContentType contentType,Long contentId,User reporter) {
         this.reason = reason;
         this.contentType =contentType;
         this.contentId = contentId;
         this.reporter = reporter;
+        this.status = ReportStatus.PENDING;
     }
 
     public static Report create(String reason,ReportContentType contentType,Long contentId,User reporter) {
-        return Report.builder()
-                .reason(reason)
-                .contentType(contentType)
-                .contentId(contentId)
-                .reporter(reporter)
-                .build();
+        return new Report (reason, contentType ,contentId ,reporter);
     }
 
     public void changeStatus(ReportStatus status) {
