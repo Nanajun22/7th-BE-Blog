@@ -1,6 +1,7 @@
 package com.example.leets7th.domain.report.controller;
 
 
+
 import com.example.leets7th.domain.report.dto.ReportRequestDto;
 import com.example.leets7th.domain.report.dto.ReportResponseDto;
 import com.example.leets7th.domain.report.service.ReportService;

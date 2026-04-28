@@ -25,6 +25,10 @@ public enum ErrorCode implements BaseCode {
     POST_DELETE_NO_PERMISSION(HttpStatus.FORBIDDEN,"POST403_2","삭제 권한이 없습니다."),
     POST_NOT_FOUND(HttpStatus.NOT_FOUND,"POST404_1","해당 게시글이 존재하지 않습니다."),
 
+    COMMENT_NOT_FOUND(HttpStatus.NOT_FOUND,"COMMENT_404_1","해당 댓글이 존재하지 않습니다."),
+
+
+
 
     REPORT_ALREADY_EXIST(HttpStatus.BAD_REQUEST,"REPORT400_1","이미 신고한 대상입니다."),
     SELF_REPORT(HttpStatus.BAD_REQUEST,"REPORT_400_2","신고할 수 없는 대상입니다."),

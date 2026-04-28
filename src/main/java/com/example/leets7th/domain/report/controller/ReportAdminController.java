@@ -1,9 +1,7 @@
 package com.example.leets7th.domain.report.controller;
 
-import com.example.leets7th.domain.report.domain.Report;
-import com.example.leets7th.domain.report.domain.ReportContentType;
+
 import com.example.leets7th.domain.report.domain.ReportStatus;
-import com.example.leets7th.domain.report.dto.ReportRequestDto;
 import com.example.leets7th.domain.report.dto.ReportResponseDto;
 import com.example.leets7th.domain.report.service.ReportAdminService;
 import com.example.leets7th.global.code.SuccessCode;

@@ -10,7 +10,7 @@ public interface ReportStrategy {
     boolean isValidType(ReportContentType reportContentType);
 
     //신고 당한 유저 서치
-    Long reportedUserId(Long reportId);
+    Long reportedUserId(Long domainId);
 
     //승인 도메인 처리
     void approve(Long postId);

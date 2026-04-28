@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe1570b-38b0-4a5d-8519-5916e0d6f809" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/comment/strategy/CommentStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/strategy/PostReportStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/strategy/PostReportStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/comment/domain/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/comment/domain/CommentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/Report.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/domain/ReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/dto/ReportRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/dto/ReportRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/service/ReportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/strategy/ReportStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/report/strategy/ReportStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/code/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/code/ErrorCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +49,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -147,7 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1773935593667</updated>
       <workItem from="1773935594836" duration="24032000" />
-      <workItem from="1777027069393" duration="38263000" />
+      <workItem from="1777027069393" duration="50721000" />
     </task>
     <servers />
   </component>

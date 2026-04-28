@@ -24,7 +24,7 @@ public class PostReportStrategy implements ReportStrategy {
     //신고 당한 유저 아이디 반환 && 컨텐츠 존재 여부 확인
     public Long reportedUserId(Long postId) {
         return postRepository
-                .findByIdWithUser(postId)
+                .findById(postId)
                 .orElseThrow(()-> new PostException(ErrorCode.POST_NOT_FOUND))
                 .getUser()
                 .getId();

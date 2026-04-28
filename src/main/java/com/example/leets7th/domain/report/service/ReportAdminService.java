@@ -1,7 +1,6 @@
 package com.example.leets7th.domain.report.service;
 
-import com.example.leets7th.domain.post.domain.Post;
-import com.example.leets7th.domain.post.dto.PostResponseDto;
+
 import com.example.leets7th.domain.report.domain.Report;
 import com.example.leets7th.domain.report.domain.ReportContentType;
 import com.example.leets7th.domain.report.domain.ReportRepository;
@@ -48,9 +47,16 @@ public class ReportAdminService {
 
         report.changeStatus(ReportStatus.APPROVED);
 
+
         //도메인 승인 처리
         ReportStrategy strategy = findStrategy(report.getContentType());
         strategy.approve(report.getContentId());
+
+
+        //동일 컨텐츠 일괄 승인 처리
+        reportRepository.updateReportStatusByContent(ReportStatus.APPROVED
+                ,report.getContentType(),
+                report.getContentId());
 
     }
 
