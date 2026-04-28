@@ -94,6 +94,11 @@ public class ReportService {
             throw new ReportException(ErrorCode.REPORT_DELETE_NO_PERMISSION);
         }
 
+        //처리된 신고 삭제 불가
+        if(report.getStatus() != ReportStatus.PENDING) {
+            throw new ReportException(ErrorCode.REPORT_ALREADY_HANDLED);
+        }
+
         reportRepository.delete(report);
     }
 

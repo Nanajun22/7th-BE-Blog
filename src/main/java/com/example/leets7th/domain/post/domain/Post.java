@@ -12,7 +12,7 @@ import org.hibernate.annotations.SQLDelete;
 
 
 @Entity @Table(name = "posts")
-@SQLDelete(sql = "UPDATE posts SET deleted_at = NOW() WHERE posts_id = ?")
+@SQLDelete(sql = "UPDATE posts SET deleted_at = NOW() WHERE post_id = ?")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Post extends BaseTimeEntity {

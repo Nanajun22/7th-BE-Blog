@@ -2,6 +2,7 @@ package com.example.leets7th.domain.user.domain;
 
 
 
+import com.example.leets7th.domain.user.dto.UserRequestDto;
 import com.example.leets7th.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -35,12 +36,15 @@ public class User extends BaseTimeEntity {
     @Column(name = "email",unique = true, nullable = false, length = 100)
     private String email;
 
-    @Builder
     private User(String loginId,String name,String password,String email) {
         this.loginId =loginId;
         this.name = name;
         this.password = password;
         this.email = email;
+    }
+
+    public static User create(String loginId,String name,String password,String email) {
+        return new User(loginId,name,password,email);
     }
 
     public void updatePassword(String password) {

@@ -25,7 +25,7 @@ public interface CommentRepository extends JpaRepository<Comment,Long> {
     //대댓글 삭제
     @Modifying(clearAutomatically = true)
     @Query("UPDATE Comment c SET c.deletedAt = CURRENT_TIMESTAMP WHERE c.rootComment.id = :rootCommentId")
-    int softDeleteAllByRootCommentId(@Param("rootCommentId")Long rootCommentId);
+    void softDeleteAllByRootCommentId(@Param("rootCommentId")Long rootCommentId);
 
 
 }
