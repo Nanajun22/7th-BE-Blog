@@ -13,10 +13,11 @@ import org.springdoc.core.customizers.OperationCustomizer;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 
+
 @Component
 public class SwaggerErrorCustomizer implements OperationCustomizer {
 
-    //에러코드 주입
+    //Operation 커스터마이징 메서드
     @Override
     public Operation customize(Operation operation,HandlerMethod handlerMethod) {
 
@@ -34,7 +35,7 @@ public class SwaggerErrorCustomizer implements OperationCustomizer {
             String code = errorCode.getCode();
             String message = errorCode.getMessage();
 
-            //
+            //예시 응답 객체 세팅
             Example example = new Example();
             java.util.Map<String, Object> exampleValue = new java.util.LinkedHashMap<>();
             exampleValue.put("success", false);
@@ -43,18 +44,22 @@ public class SwaggerErrorCustomizer implements OperationCustomizer {
 
             example.setValue(exampleValue);
 
-            example.setDescription(message);
 
 
-            //
+            //현재 API 에서 응답 객체 가져오기
+            /*
+            ApiResponses = ApiResponse 들의 컬렉션
+            ApiResponse = 상태 코드 하나의 응답 정보를 담는 객체
+             */
 
             ApiResponses apiResponses = operation.getResponses();
 
             ApiResponse apiResponse = apiResponses.containsKey(status)
                     ? apiResponses.get(status)
-                    : new ApiResponse().description("");
+                    : new ApiResponse().description(message);
 
 
+            //ApiResponse 객체 조립
 
             Content content =  apiResponse.getContent() != null ? apiResponse.getContent() : new Content();
             MediaType mediaType = content.containsKey("application/json") ? content.get("application/json") : new MediaType();
