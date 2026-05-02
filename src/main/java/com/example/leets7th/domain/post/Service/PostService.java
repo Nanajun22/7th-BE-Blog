@@ -40,7 +40,7 @@ public class PostService {
     }
 
     @Transactional
-    public PostResponseDto.CreatePost createPost(PostRequestDto.Create request,Long userId) {
+    public PostResponseDto.CreatePost createPost(PostRequestDto.PostCreateReq request, Long userId) {
         Post post = Post.create(request.title(),request.content(),userService.getUser(userId));
         postRepository.save(post);
 
@@ -48,7 +48,7 @@ public class PostService {
     }
 
     @Transactional
-    public PostResponseDto.UpdatePost updatePost(PostRequestDto.Update request,Long postId,Long userId) {
+    public PostResponseDto.UpdatePost updatePost(PostRequestDto.PostUpdateReq request,Long postId,Long userId) {
         Post post = postRepository.findByIdWithUser(postId).orElseThrow(()-> new GlobalException(ErrorCode.POST_NOT_FOUND));
 
         if(!userId.equals(post.getUser().getId())) {

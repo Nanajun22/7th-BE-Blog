@@ -3,7 +3,7 @@ package com.example.leets7th.domain.comment.strategy;
 import com.example.leets7th.domain.comment.domain.Comment;
 import com.example.leets7th.domain.comment.domain.CommentRepository;
 import com.example.leets7th.domain.comment.exception.CommentException;
-import com.example.leets7th.domain.post.exception.PostException;
+import com.example.leets7th.domain.post.error.PostException;
 import com.example.leets7th.domain.report.domain.ReportContentType;
 import com.example.leets7th.domain.report.strategy.ReportStrategy;
 import com.example.leets7th.global.code.ErrorCode;

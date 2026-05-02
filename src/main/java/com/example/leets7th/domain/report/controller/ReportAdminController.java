@@ -14,10 +14,11 @@ import java.util.List;
 @RequestMapping("/api/admin/reports")
 @RestController
 @RequiredArgsConstructor
-public class ReportAdminController {
+public class ReportAdminController implements ReportAdminControllerDocs{
     private final ReportAdminService reportAdminService;
 
     //신고 목록 조회 API
+    @Override
     @GetMapping
     public ApiResponse<List<ReportResponseDto.ReportListRes>> getReportList(
             @RequestParam ReportStatus status
@@ -27,6 +28,7 @@ public class ReportAdminController {
     }
 
     //신고 승인 API
+    @Override
     @PostMapping("/{reportId}/approve")
     public ApiResponse<Void> approveReport(@PathVariable Long reportId) {
         reportAdminService.approveReport(reportId);

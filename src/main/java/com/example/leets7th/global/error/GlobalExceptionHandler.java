@@ -2,14 +2,15 @@ package com.example.leets7th.global.error;
 
 
 
-import com.example.leets7th.domain.post.exception.PostException;
 import com.example.leets7th.global.code.ErrorCode;
 import com.example.leets7th.global.response.ApiResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +28,23 @@ public class GlobalExceptionHandler {
         }
 
 
-        return ResponseEntity.badRequest().body(ApiResponse.failure(ErrorCode.VALIDATION_ERROR,validationErrors));
+        return ResponseEntity
+                .status(ErrorCode.VALIDATION_ERROR.getStatus())
+                .body(ApiResponse.failure(ErrorCode.VALIDATION_ERROR,validationErrors));
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<ApiResponse<?>> handleTypeMismatchException(MethodArgumentTypeMismatchException ex) {
+        return ResponseEntity
+                .status(ErrorCode.UNSUPPORTED_TYPE.getStatus())
+                .body(ApiResponse.failure(ErrorCode.UNSUPPORTED_TYPE));
     }
 
     @ExceptionHandler(GlobalException.class)
     public ResponseEntity<ApiResponse<Void>> handleGlobalException(GlobalException ex) {
-        return ResponseEntity.status(ex.getBaseCode().getStatus()).body(ApiResponse.failure(ex.getBaseCode()));
+        return ResponseEntity
+                .status(ex.getBaseCode().getStatus())
+                .body(ApiResponse.failure(ex.getBaseCode()));
     }
 
 

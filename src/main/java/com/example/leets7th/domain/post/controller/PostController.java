@@ -5,7 +5,9 @@ import com.example.leets7th.domain.post.dto.PostRequestDto;
 import com.example.leets7th.domain.post.dto.PostResponseDto;
 import com.example.leets7th.global.code.SuccessCode;
 import com.example.leets7th.global.response.ApiResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +22,8 @@ public class PostController implements PostControllerDocs {
     @Override
     @GetMapping("/{postId}")
     public ApiResponse<PostResponseDto.ReadPost> getPost(
-            Long postId,
-            Long userId
+            @PathVariable Long postId,
+            @RequestParam Long userId
     ) {
         return ApiResponse.success(SuccessCode.POST_READ_OK,postService.getPost(postId));
     }
@@ -35,10 +37,11 @@ public class PostController implements PostControllerDocs {
 
 
     @Override
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ApiResponse<PostResponseDto.CreatePost> createPost(
-            PostRequestDto.Create request,
-            Long userId
+            @Valid @RequestBody PostRequestDto.PostCreateReq request,
+            @RequestParam Long userId
     ) {
         return ApiResponse.success(SuccessCode.POST_CREATED,postService.createPost(request,userId));
     }
@@ -46,9 +49,9 @@ public class PostController implements PostControllerDocs {
     @Override
     @PatchMapping("/{postId}")
     public ApiResponse<PostResponseDto.UpdatePost> updatePost(
-            PostRequestDto.Update request,
-            Long postId,
-            Long userId
+            @Valid @RequestBody PostRequestDto.PostUpdateReq request,
+            @PathVariable Long postId,
+            @RequestParam Long userId
     ) {
         return ApiResponse.success(SuccessCode.POST_UPDATE_OK,postService.updatePost(request,postId,userId));
     }
@@ -57,8 +60,8 @@ public class PostController implements PostControllerDocs {
     @Override
     @DeleteMapping("/{postId}")
     public ApiResponse<Void> deletePost(
-            Long postId,
-            Long userId
+            @PathVariable Long postId,
+            @RequestParam Long userId
     ) {
         postService.deletePost(postId,userId);
         return ApiResponse.success(SuccessCode.POST_DELETE_OK);

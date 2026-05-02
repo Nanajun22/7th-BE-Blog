@@ -1,8 +1,5 @@
 package com.example.leets7th.domain.post.dto;
 
-import com.example.leets7th.domain.post.domain.Post;
-import com.example.leets7th.domain.user.domain.User;
-import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -13,7 +10,7 @@ public class PostRequestDto {
 
 
 
-    public record Create(
+    public record PostCreateReq(
             @NotBlank(message = "제목을 입력해주세요.")
             @Size(max = 255,message = "제목은 최대 255자까지 가능합니다.")
             String title,
@@ -24,7 +21,7 @@ public class PostRequestDto {
     }
 
 
-    public record Update(
+    public record PostUpdateReq(
 
             @NotBlank(message = "제목을 입력해주세요.")
             @Size(max = 255, message = "제목은 최대 255자까지 가능합니다.")

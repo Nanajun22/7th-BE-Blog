@@ -1,4 +1,4 @@
-package com.example.leets7th.domain.post.exception;
+package com.example.leets7th.domain.post.error;
 
 import com.example.leets7th.global.common.BaseCode;
 import lombok.Getter;
