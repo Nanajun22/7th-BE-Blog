@@ -1,0 +1,670 @@
+openapi: 3.0.1
+info:
+  title: Leets 7th blog
+  description: 리츠 7기 블로그 프로젝트
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+tags: []
+paths:
+  /api/posts:
+    get:
+      tags:
+      - Post
+      summary: 게시글 목록 조회
+      description: 게시글을 목록을 조회합니다.
+      operationId: post-readList-success
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostreadListRes"
+              examples:
+                post-readList-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"POST200_1\"\
+                    ,\r\n  \"message\" : \"게시글 목록 조회에 성공하였습니다\",\r\n  \"data\" : [\
+                    \ {\r\n    \"postId\" : 1,\r\n    \"title\" : \"제목\",\r\n    \"\
+                    nickname\" : \"홍길동\",\r\n    \"createdAt\" : \"2026-01-01T00:00:01\"\
+                    ,\r\n    \"updatedAt\" : \"2026-01-01T00:00:01\"\r\n  } ]\r\n}"
+    post:
+      tags:
+      - Post
+      summary: 게시글 생성
+      description: 새로운 게시글을 생성합니다.
+      operationId: post-create-
+      parameters:
+      - name: userId
+        in: query
+        description: 요청한 유저의 ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: "#/components/schemas/PostCreateReq"
+            examples:
+              post-create-success:
+                value: "{\r\n  \"title\" : \"제목\",\r\n  \"content\" : \"내용\"\r\n}"
+              post-create-userNotFound:
+                value: "{\r\n  \"title\" : \"제목\",\r\n  \"content\" : \"내용\"\r\n}"
+              post-create-validataion:
+                value: "{\r\n  \"title\" : \"\",\r\n  \"content\" : \"내용\"\r\n}"
+      responses:
+        "201":
+          description: "201"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostCreateRes"
+              examples:
+                post-create-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"POST201_1\"\
+                    ,\r\n  \"message\" : \"게시글 작성에 성공하였습니다.\",\r\n  \"data\" : {\r\
+                    \n    \"postId\" : 1,\r\n    \"title\" : \"제목\",\r\n    \"content\"\
+                    \ : \"내용\",\r\n    \"nickname\" : \"홍길동\",\r\n    \"createdAt\"\
+                    \ : \"2026-01-01T00:00:01\",\r\n    \"updatedAt\" : \"2026-01-01T00:00:01\"\
+                    \r\n  }\r\n}"
+        "404":
+          description: "404"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostCreateRes"
+              examples:
+                post-create-userNotFound:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"USER404_1\"\
+                    ,\r\n  \"message\" : \"존재하지 않는 유저입니다.\"\r\n}"
+        "400":
+          description: "400"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostCreateRes"
+              examples:
+                post-create-validataion:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"COMMON400_3\"\
+                    ,\r\n  \"message\" : \"입력값이 유효하지 않습니다.\",\r\n  \"data\" : [ {\r\
+                    \n    \"field\" : \"title\",\r\n    \"value\" : \"\",\r\n    \"\
+                    reason\" : \"제목을 입력해주세요.\"\r\n  } ]\r\n}"
+  /api/reports:
+    post:
+      tags:
+      - Report
+      summary: 신고 접수 API
+      description: 다른 사용자의 컨텐츠를 신고합니다.
+      operationId: report-create-
+      parameters:
+      - name: userId
+        in: query
+        description: 신고자 ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: "#/components/schemas/ReportCreateReq"
+            examples:
+              report-create-alreadyExist:
+                value: "{\r\n  \"reason\" : \"욕설\",\r\n  \"contentType\" : \"COMMENT\"\
+                  ,\r\n  \"contentId\" : 1\r\n}"
+              report-create-selfReport:
+                value: "{\r\n  \"reason\" : \"욕설\",\r\n  \"contentType\" : \"COMMENT\"\
+                  ,\r\n  \"contentId\" : 1\r\n}"
+              report-create-success:
+                value: "{\r\n  \"reason\" : \"욕설\",\r\n  \"contentType\" : \"COMMENT\"\
+                  ,\r\n  \"contentId\" : 1\r\n}"
+      responses:
+        "400":
+          description: "400"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportCreateRes"
+              examples:
+                report-create-alreadyExist:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"REPORT400_1\"\
+                    ,\r\n  \"message\" : \"이미 접수된 신고입니다.\"\r\n}"
+                report-create-selfReport:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"REPORT400_2\"\
+                    ,\r\n  \"message\" : \"신고할 수 없는 대상입니다.\"\r\n}"
+        "201":
+          description: "201"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportCreateRes"
+              examples:
+                report-create-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"COMMON201\"\
+                    ,\r\n  \"message\" : \"요청 리소스 생성 성공\",\r\n  \"data\" : {\r\n \
+                    \   \"reason\" : \"욕설\",\r\n    \"contentType\" : \"COMMENT\"\
+                    ,\r\n    \"contentId\" : 1\r\n  }\r\n}"
+  /api/admin/reports:
+    get:
+      tags:
+      - ReportAdmin
+      summary: 신고 목록 조회 API
+      description: 상태 별로 신고 목록을 조회한다
+      operationId: report-getList-success
+      parameters:
+      - name: status
+        in: query
+        description: 신고 상태
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportListRes"
+              examples:
+                report-getList-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"COMMON200\"\
+                    ,\r\n  \"message\" : \"요청 응답 성공\",\r\n  \"data\" : [ {\r\n   \
+                    \ \"reportId\" : 1,\r\n    \"contentType\" : \"POST\",\r\n   \
+                    \ \"contentId\" : 1,\r\n    \"status\" : \"PENDING\",\r\n    \"\
+                    reporterName\" : \"홍길동\"\r\n  } ]\r\n}"
+  /api/posts/{postId}:
+    get:
+      tags:
+      - Post
+      summary: 게시글 조회 API
+      description: 게시글을 조회합니다.
+      operationId: post-read-
+      parameters:
+      - name: postId
+        in: path
+        description: ""
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: query
+        description: 요청한 유저 ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: "404"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostReadRes"
+              examples:
+                post-read-postNotFound:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"POST404_1\"\
+                    ,\r\n  \"message\" : \"해당 게시글이 존재하지 않습니다.\"\r\n}"
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostReadRes"
+              examples:
+                post-read-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"POST200_2\"\
+                    ,\r\n  \"message\" : \"게시글 상세 조회에 성공하였습니다.\",\r\n  \"data\" :\
+                    \ {\r\n    \"title\" : \"제목\",\r\n    \"content\" : \"내용\",\r\n\
+                    \    \"nickname\" : \"홍길동\",\r\n    \"createdAt\" : \"2026-01-01T00:00:01\"\
+                    ,\r\n    \"updatedAt\" : \"2026-01-01T00:00:01\"\r\n  }\r\n}"
+    delete:
+      tags:
+      - Post
+      summary: 게시글 삭제 API
+      description: 기존의 게시글을 삭제합니다.
+      operationId: post-delete-
+      parameters:
+      - name: postId
+        in: path
+        description: 게시글 ID
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: query
+        description: 요청한 유저 ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "403":
+          description: "403"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                post-delete-noPermission:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"POST403_2\"\
+                    ,\r\n  \"message\" : \"삭제 권한이 없습니다.\"\r\n}"
+        "404":
+          description: "404"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                post-delete-notFound:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"POST404_1\"\
+                    ,\r\n  \"message\" : \"해당 게시글이 존재하지 않습니다.\"\r\n}"
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                post-delete-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"POST200_4\"\
+                    ,\r\n  \"message\" : \"게시글 삭제에 성공했습니다.\"\r\n}"
+    patch:
+      tags:
+      - Post
+      summary: 게시글 수정 API
+      description: 기존의 게시글을 수정합니다.
+      operationId: post-update-
+      parameters:
+      - name: postId
+        in: path
+        description: 게시글 ID
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: query
+        description: 요청한 유저 ID
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: "#/components/schemas/PostUpdateReq"
+            examples:
+              post-update-noPermission:
+                value: "{\r\n  \"title\" : \"수정된 게시글 제목\",\r\n  \"content\" : \"수정\
+                  된 게시글 내용\"\r\n}"
+              post-update-postNotFound:
+                value: "{\r\n  \"title\" : \"수정된 게시글 제목\",\r\n  \"content\" : \"수정\
+                  된 게시글 내용\"\r\n}"
+              post-update-success:
+                value: "{\r\n  \"title\" : \"수정된 제목\",\r\n  \"content\" : \"수정된 내용\
+                  \"\r\n}"
+              post-update-validationError:
+                value: "{\r\n  \"title\" : \"\",\r\n  \"content\" : \"\"\r\n}"
+      responses:
+        "403":
+          description: "403"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostUpdateRes"
+              examples:
+                post-update-noPermission:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"POST403_1\"\
+                    ,\r\n  \"message\" : \"수정 권한이 없습니다.\"\r\n}"
+        "404":
+          description: "404"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostUpdateRes"
+              examples:
+                post-update-postNotFound:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"POST404_1\"\
+                    ,\r\n  \"message\" : \"해당 게시글이 존재하지 않습니다.\"\r\n}"
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostUpdateRes"
+              examples:
+                post-update-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"POST200_3\"\
+                    ,\r\n  \"message\" : \"게시글이 수정되었습니다.\",\r\n  \"data\" : {\r\n\
+                    \    \"title\" : \"수정된 제목\",\r\n    \"content\" : \"수정된 내용\",\r\
+                    \n    \"nickname\" : \"홍길동\",\r\n    \"createdAt\" : \"2026-01-01T00:00:01\"\
+                    ,\r\n    \"updatedAt\" : \"2026-01-01T00:00:01\"\r\n  }\r\n}"
+        "400":
+          description: "400"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostUpdateRes"
+              examples:
+                post-update-validationError:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"COMMON400_3\"\
+                    ,\r\n  \"message\" : \"입력값이 유효하지 않습니다.\",\r\n  \"data\" : [ {\r\
+                    \n    \"field\" : \"content\",\r\n    \"value\" : \"\",\r\n  \
+                    \  \"reason\" : \"내용을 입력해주세요.\"\r\n  }, {\r\n    \"field\" : \"\
+                    title\",\r\n    \"value\" : \"\",\r\n    \"reason\" : \"제목을 입력\
+                    해주세요.\"\r\n  } ]\r\n}"
+  /api/reports/{reportId}:
+    delete:
+      tags:
+      - Report
+      summary: 신고 취소 API
+      description: 기존의 신고를 취소합니다.
+      operationId: report-delete-
+      parameters:
+      - name: reportId
+        in: path
+        description: 삭제할 신고 ID
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: query
+        description: 요청한 유저 ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "400":
+          description: "400"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportDeleteRes"
+              examples:
+                report-delete-alreadyHandled:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"REPORT400_3\"\
+                    ,\r\n  \"message\" : \"이미 처리된 신고입니다.\"\r\n}"
+        "403":
+          description: "403"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportDeleteRes"
+              examples:
+                report-delete-noPermission:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"REPORT403_1\"\
+                    ,\r\n  \"message\" : \"취소 권한이 없습니다.\"\r\n}"
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportDeleteRes"
+              examples:
+                report-delete-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"COMMON200\"\
+                    ,\r\n  \"message\" : \"요청 응답 성공\"\r\n}"
+  /api/admin/reports/{reportId}/approve:
+    post:
+      tags:
+      - ReportAdmin
+      summary: 신고 승인 API
+      description: 대기 상태에 있는 신고를 승인한다.
+      operationId: report-approve-
+      parameters:
+      - name: reportId
+        in: path
+        description: 신고 ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: "404"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                report-approve-notFound:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"REPORT404_1\"\
+                    ,\r\n  \"message\" : \"해당 신고가 존재하지 않습니다.\"\r\n}"
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                report-approve-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"COMMON200\"\
+                    ,\r\n  \"message\" : \"요청 응답 성공\"\r\n}"
+  /api/admin/reports/{reportId}/reject:
+    post:
+      tags:
+      - ReportAdmin
+      summary: 신고 반려 API
+      description: 대기 상태에 있는 신고를 반려한다.
+      operationId: report-reject-
+      parameters:
+      - name: reportId
+        in: path
+        description: 신고 ID
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: "404"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                report-reject-reportNotFound:
+                  value: "{\r\n  \"isSuccess\" : false,\r\n  \"code\" : \"REPORT404_1\"\
+                    ,\r\n  \"message\" : \"해당 신고가 존재하지 않습니다.\"\r\n}"
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api-admin-reports-reportId-approve-1771465496"
+              examples:
+                report-reject-success:
+                  value: "{\r\n  \"isSuccess\" : true,\r\n  \"code\" : \"COMMON200\"\
+                    ,\r\n  \"message\" : \"요청 응답 성공\"\r\n}"
+components:
+  schemas:
+    PostReadRes:
+      title: PostReadRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        data:
+          type: object
+          properties:
+            createdAt:
+              type: string
+              description: 게시글 생성 일시
+            nickname:
+              type: string
+              description: 작성자 닉네임
+            title:
+              type: string
+              description: 게시글 제목
+            content:
+              type: string
+              description: 게시글 내용
+            updatedAt:
+              type: string
+              description: 게시글 수정 일시
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    PostUpdateRes:
+      title: PostUpdateRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    api-admin-reports-reportId-approve-1771465496:
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    PostCreateRes:
+      title: PostCreateRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    ReportCreateRes:
+      title: ReportCreateRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    ReportDeleteRes:
+      title: ReportDeleteRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    ReportListRes:
+      title: ReportListRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              reportId:
+                type: number
+                description: 신고 ID
+              contentId:
+                type: number
+                description: 신고된 컨텐츠 ID
+              reporterName:
+                type: string
+                description: 신고자 닉네임
+              contentType:
+                type: string
+                description: 신고된 컨텐츠 타입
+              status:
+                type: string
+                description: 신고 상태
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    ReportCreateReq:
+      title: ReportCreateReq
+      type: object
+      properties:
+        reason:
+          type: string
+          description: 신고 사유
+        contentId:
+          type: number
+          description: 신고된 컨텐츠 ID
+        contentType:
+          type: string
+          description: 신고된 컨텐츠 타입
+    PostUpdateReq:
+      title: PostUpdateReq
+      type: object
+      properties:
+        title:
+          type: string
+          description: 수정된 게시글 제목
+        content:
+          type: string
+          description: 수정된 게시글 내용
+    PostreadListRes:
+      title: PostreadListRes
+      type: object
+      properties:
+        code:
+          type: string
+          description: API 응답 코드
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              createdAt:
+                type: string
+                description: 게시글 생성 일시
+              nickname:
+                type: string
+                description: 작성자 닉네임
+              postId:
+                type: number
+                description: 게시글 ID
+              title:
+                type: string
+                description: 게시글 제목
+              updatedAt:
+                type: string
+                description: 게시글 수정 일시
+        message:
+          type: string
+          description: API 응답 메세지
+        isSuccess:
+          type: boolean
+          description: API 성공 여부
+    PostCreateReq:
+      title: PostCreateReq
+      type: object
+      properties:
+        title:
+          type: string
+          description: 게시글 제목
+        content:
+          type: string
+          description: 게시글 내용

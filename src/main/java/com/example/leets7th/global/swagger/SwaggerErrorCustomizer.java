@@ -1,8 +1,7 @@
-package com.example.leets7th.global.config;
+package com.example.leets7th.global.swagger;
 
 import com.example.leets7th.global.annotation.ApiErrorResponse;
 import com.example.leets7th.global.code.ErrorCode;
-import com.example.leets7th.global.common.BaseCode;
 import io.swagger.v3.oas.models.Operation;
 import io.swagger.v3.oas.models.examples.Example;
 import io.swagger.v3.oas.models.media.Content;

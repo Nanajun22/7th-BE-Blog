@@ -1,1 +1,9 @@
-spring.application.name=demo
+spring:
+  application:
+    name: demo
+
+
+#swagger yaml 경로 설정
+springdoc:
+  swagger-ui:
+    url: /restDocs/openapi3.yaml

@@ -1,6 +1,6 @@
 package com.example.leets7th.domain.post.controller;
 
-import com.example.leets7th.domain.post.Service.PostService;
+import com.example.leets7th.domain.post.service.PostService;
 import com.example.leets7th.domain.post.dto.PostRequestDto;
 import com.example.leets7th.domain.post.dto.PostResponseDto;
 import com.example.leets7th.global.code.SuccessCode;

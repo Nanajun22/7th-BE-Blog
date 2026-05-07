@@ -1,4 +1,4 @@
-package com.example.leets7th.domain.post.Service;
+package com.example.leets7th.domain.post.service;
 
 
 import com.example.leets7th.domain.comment.service.CommentService;

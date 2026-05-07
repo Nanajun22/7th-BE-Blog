@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe1570b-38b0-4a5d-8519-5916e0d6f809" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/config/JpaAuditingConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/controller/PostControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/service/PostServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportAdminControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/annotation/ApiErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/annotation/ApiErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/config/SwaggerErrorCustomizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/config/SwaggerErrorCustomizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/Service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/config/SwaggerErrorCustomizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/swagger/SwaggerErrorCustomizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/DemoApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +33,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -32,7 +46,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="7th-BE-Blog" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="실행 구성" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -55,6 +69,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -71,7 +89,44 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Gradle.7th-BE-Blog 빌드.executor": "Run",
     "Gradle.C:/Users/skaud/7th-BE-Blog/settings.gradle.executor": "Run",
+    "Gradle.GetPost.getPostApi_notFound.executor": "Run",
+    "Gradle.GetPost.success.executor": "Run",
+    "Gradle.GetPostList.getPostListApi.executor": "Run",
+    "Gradle.PostControllerTest.executor": "Run",
+    "Gradle.PostControllerTest.getPostApi.executor": "Run",
+    "Gradle.PostControllerTest.getPostApi_notFound.executor": "Run",
+    "Gradle.PostControllerTest.getPostListApi.executor": "Run",
+    "Gradle.ReportControllerTest.executor": "Run",
+    "Gradle.approveReport.executor": "Run",
+    "Gradle.approveReport.reportNotFound.executor": "Run",
+    "Gradle.approveReport.success.executor": "Run",
+    "Gradle.createPost.error_blankTitle.executor": "Run",
+    "Gradle.createPost.error_userNotFound.executor": "Run",
+    "Gradle.createPost.executor": "Run",
+    "Gradle.createPost.success.executor": "Run",
+    "Gradle.createReport.fail_reportAlreadyExist.executor": "Run",
+    "Gradle.createReport.fail_selfReport.executor": "Run",
+    "Gradle.createReport.success.executor": "Run",
+    "Gradle.deletePost.executor": "Run",
+    "Gradle.deletePost.noPermission.executor": "Run",
+    "Gradle.deletePost.notFound.executor": "Run",
+    "Gradle.deletePost.success.executor": "Run",
+    "Gradle.deleteReport.alreadyHandled.executor": "Run",
+    "Gradle.deleteReport.executor": "Run",
+    "Gradle.deleteReport.noPermission.executor": "Run",
+    "Gradle.deleteReport.success.executor": "Run",
+    "Gradle.getReportList.success.executor": "Run",
     "Gradle.namyeongjun 빌드.executor": "Run",
+    "Gradle.rejectReport.reportNotFound.executor": "Run",
+    "Gradle.rejectReport.success.executor": "Run",
+    "Gradle.updatePost.blankValidation.executor": "Run",
+    "Gradle.updatePost.executor": "Run",
+    "Gradle.updatePost.noPermission.executor": "Run",
+    "Gradle.updatePost.postNotFound.executor": "Run",
+    "Gradle.updatePost.success.executor": "Run",
+    "Gradle.소스 다운로드.executor": "Run",
+    "JUnit.PostControllerTest.executor": "Run",
+    "JUnit.PostControllerTest.getPostListApi.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -98,6 +153,141 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication (1)">
+    <configuration name="approveReport" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.leets7th.domain.report.controller.ReportAdminControllerTest$approveReport&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="approveReport.reportNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.leets7th.domain.report.controller.ReportAdminControllerTest$approveReport.reportNotFound&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="approveReport.success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.leets7th.domain.report.controller.ReportAdminControllerTest$approveReport.success&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="rejectReport.reportNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.leets7th.domain.report.controller.ReportAdminControllerTest$rejectReport.reportNotFound&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="rejectReport.success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.leets7th.domain.report.controller.ReportAdminControllerTest$rejectReport.success&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,6 +318,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.rejectReport.reportNotFound" />
+        <item itemvalue="Gradle.rejectReport.success" />
+        <item itemvalue="Gradle.approveReport.reportNotFound" />
+        <item itemvalue="Gradle.approveReport" />
+        <item itemvalue="Gradle.approveReport.success" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -146,7 +345,9 @@
       <updated>1773935593667</updated>
       <workItem from="1773935594836" duration="24032000" />
       <workItem from="1777027069393" duration="60578000" />
-      <workItem from="1777559366574" duration="22655000" />
+      <workItem from="1777559366574" duration="43966000" />
+      <workItem from="1777961832957" duration="296000" />
+      <workItem from="1777962189867" duration="62109000" />
     </task>
     <servers />
   </component>
@@ -163,6 +364,22 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/7th_BE_Blog$DemoApplication.ic" NAME="DemoApplication 커버리지 결과" MODIFIED="1774346603786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
