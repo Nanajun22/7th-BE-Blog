@@ -16,7 +16,7 @@ public class UserController {
 
 
 
-    //테스트 API
+    // HTTPS 필수
     @PostMapping
     public ApiResponse<UserResponseDto.UserCreateRes> createUser(@RequestBody UserRequestDto.UserCreateReq request) {
         UserResponseDto.UserCreateRes response =userService.createUser(request);

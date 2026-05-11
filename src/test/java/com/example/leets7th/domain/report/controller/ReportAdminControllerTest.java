@@ -4,15 +4,12 @@ import com.epages.restdocs.apispec.MockMvcRestDocumentationWrapper;
 import com.epages.restdocs.apispec.ResourceSnippetParameters;
 import com.epages.restdocs.apispec.ResourceSnippetParametersBuilder;
 import com.epages.restdocs.apispec.Schema;
-import com.example.leets7th.domain.post.service.PostService;
 import com.example.leets7th.domain.report.domain.ReportContentType;
 import com.example.leets7th.domain.report.domain.ReportStatus;
-import com.example.leets7th.domain.report.dto.ReportRequestDto;
 import com.example.leets7th.domain.report.dto.ReportResponseDto;
 import com.example.leets7th.domain.report.error.ReportException;
 import com.example.leets7th.domain.report.service.ReportAdminService;
 import com.example.leets7th.global.code.ErrorCode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -47,10 +44,7 @@ public class ReportAdminControllerTest {
     private MockMvc mockMvc;
 
     private static final Long REPORT_ID = 1L;
-    private static final Long REPORTER_ID = 1L;
     private static final Long CONTENT_ID = 1L;
-    @Autowired
-    private ObjectMapper objectMapper;
 
 
     @Nested
@@ -58,7 +52,7 @@ public class ReportAdminControllerTest {
     class getReportList {
 
         @Test
-        @DisplayName("게시글 목록 조회 성공 : 200")
+        @DisplayName("신고 목록 조회 성공 : 200")
         void success() throws Exception {
             //given
 

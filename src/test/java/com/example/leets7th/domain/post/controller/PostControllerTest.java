@@ -164,7 +164,7 @@
 
             @Test
             @DisplayName("게시글 목록 조회 성공 : 200")
-            void getPostListApi() throws Exception {
+            void success() throws Exception {
                 //given
                 PostResponseDto.ReadPostList postDto = new PostResponseDto.ReadPostList(
                         POST_ID,
@@ -201,10 +201,10 @@
                         .andDo(MockMvcRestDocumentationWrapper.document("post-readList-success",
                                 resource(ResourceSnippetParameters.builder()
                                         .tag("Post")
-                                        .summary("게시글 목록 조회")
-                                        .description("게시글을 목록을 조회합니다.")
+                                        .summary("게시글 목록 조회 API")
+                                        .description("게시글 목록을 조회합니다.")
 
-                                        .responseSchema(Schema.schema("PostreadListRes"))
+                                        .responseSchema(Schema.schema("PostListRes"))
 
                                         .responseFields(
                                                 fieldWithPath("isSuccess").description("API 성공 여부"),
@@ -236,8 +236,9 @@
             private ResourceSnippetParametersBuilder commonBuilder() {
                 return ResourceSnippetParameters
                         .builder()
-                        .tag("Post").description("게시글 API")
-                        .summary("게시글 생성").description("새로운 게시글을 생성합니다.")
+                        .tag("Post")
+                        .summary("게시글 생성 API")
+                        .description("새로운 게시글을 생성합니다.")
 
                         .requestSchema(Schema.schema("PostCreateReq"))
                         .responseSchema(Schema.schema("PostCreateRes"))

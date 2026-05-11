@@ -21,6 +21,9 @@ public enum ErrorCode implements BaseCode {
 
 
     //User
+    EMAIL_ALREADY_EXISTS(HttpStatus.BAD_REQUEST,"USER400_2","이미 가입된 이메일입니다."),
+    LOGIN_ID_ALREADY_EXISTS(HttpStatus.BAD_REQUEST,"USER400_2","이미 존재하는 아이디입니다."),
+    EMAIL_NOT_VERIFIED(HttpStatus.FORBIDDEN,"USER403_1","인증 토큰이 유효하지 않습니다."),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND,"USER404_1","존재하지 않는 유저입니다."),
 
 
@@ -37,17 +40,24 @@ public enum ErrorCode implements BaseCode {
     COMMENT_NOT_FOUND(HttpStatus.NOT_FOUND,"COMMENT_404_1","해당 댓글이 존재하지 않습니다."),
 
 
-
-
-
-
     //Report
     REPORT_ALREADY_EXIST(HttpStatus.BAD_REQUEST,"REPORT400_1","이미 접수된 신고입니다."),
     SELF_REPORT(HttpStatus.BAD_REQUEST,"REPORT400_2","신고할 수 없는 대상입니다."),
     REPORT_ALREADY_HANDLED(HttpStatus.BAD_REQUEST,"REPORT400_3","이미 처리된 신고입니다."),
     REPORT_DELETE_NO_PERMISSION(HttpStatus.FORBIDDEN,"REPORT403_1","취소 권한이 없습니다."),
     REPORT_NOT_FOUND(HttpStatus.NOT_FOUND,"REPORT404_1","해당 신고가 존재하지 않습니다."),
-    UNSUPPORTED_CONTENT_TYPE(HttpStatus.NOT_FOUND,"REPORT404_2","지원하지 않는 대상입니다.");
+    UNSUPPORTED_CONTENT_TYPE(HttpStatus.NOT_FOUND,"REPORT404_2","지원하지 않는 대상입니다."),
+
+
+
+
+    //Auth
+    AUTH_CODE_NOT_EQUAL(HttpStatus.BAD_REQUEST,"AUTH_400_2","인증코드가 올바르지 않습니다.");
+
+
+
+
+    ;
 
 
     private final HttpStatus status;

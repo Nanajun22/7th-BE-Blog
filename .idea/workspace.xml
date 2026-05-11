@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fe1570b-38b0-4a5d-8519-5916e0d6f809" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/config/JpaAuditingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/controller/PostControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/service/PostServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportAdminControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/auth/controller/MailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/auth/dto/MailRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/auth/repository/MailCacheRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/auth/service/MailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/Service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/domain/post/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/config/SwaggerErrorCustomizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/leets7th/global/swagger/SwaggerErrorCustomizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/restDocs/openapi3.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/restDocs/openapi3.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/controller/PostControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/controller/PostControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/service/PostServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/post/service/PostServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportAdminControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportAdminControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,68 +83,68 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Gradle.7th-BE-Blog 빌드.executor": "Run",
-    "Gradle.C:/Users/skaud/7th-BE-Blog/settings.gradle.executor": "Run",
-    "Gradle.GetPost.getPostApi_notFound.executor": "Run",
-    "Gradle.GetPost.success.executor": "Run",
-    "Gradle.GetPostList.getPostListApi.executor": "Run",
-    "Gradle.PostControllerTest.executor": "Run",
-    "Gradle.PostControllerTest.getPostApi.executor": "Run",
-    "Gradle.PostControllerTest.getPostApi_notFound.executor": "Run",
-    "Gradle.PostControllerTest.getPostListApi.executor": "Run",
-    "Gradle.ReportControllerTest.executor": "Run",
-    "Gradle.approveReport.executor": "Run",
-    "Gradle.approveReport.reportNotFound.executor": "Run",
-    "Gradle.approveReport.success.executor": "Run",
-    "Gradle.createPost.error_blankTitle.executor": "Run",
-    "Gradle.createPost.error_userNotFound.executor": "Run",
-    "Gradle.createPost.executor": "Run",
-    "Gradle.createPost.success.executor": "Run",
-    "Gradle.createReport.fail_reportAlreadyExist.executor": "Run",
-    "Gradle.createReport.fail_selfReport.executor": "Run",
-    "Gradle.createReport.success.executor": "Run",
-    "Gradle.deletePost.executor": "Run",
-    "Gradle.deletePost.noPermission.executor": "Run",
-    "Gradle.deletePost.notFound.executor": "Run",
-    "Gradle.deletePost.success.executor": "Run",
-    "Gradle.deleteReport.alreadyHandled.executor": "Run",
-    "Gradle.deleteReport.executor": "Run",
-    "Gradle.deleteReport.noPermission.executor": "Run",
-    "Gradle.deleteReport.success.executor": "Run",
-    "Gradle.getReportList.success.executor": "Run",
-    "Gradle.namyeongjun 빌드.executor": "Run",
-    "Gradle.rejectReport.reportNotFound.executor": "Run",
-    "Gradle.rejectReport.success.executor": "Run",
-    "Gradle.updatePost.blankValidation.executor": "Run",
-    "Gradle.updatePost.executor": "Run",
-    "Gradle.updatePost.noPermission.executor": "Run",
-    "Gradle.updatePost.postNotFound.executor": "Run",
-    "Gradle.updatePost.success.executor": "Run",
-    "Gradle.소스 다운로드.executor": "Run",
-    "JUnit.PostControllerTest.executor": "Run",
-    "JUnit.PostControllerTest.getPostListApi.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.DemoApplication (1).executor": "Run",
-    "Spring Boot.DemoApplication.executor": "Run",
-    "git-widget-placeholder": "나명준/5주차",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/skaud/7th-BE-Blog/namyeongjun",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.7th-BE-Blog 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.C:/Users/skaud/7th-BE-Blog/settings.gradle.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GetPost.getPostApi_notFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GetPost.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GetPostList.getPostListApi.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostControllerTest.getPostApi.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostControllerTest.getPostApi_notFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PostControllerTest.getPostListApi.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ReportControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.approveReport.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.approveReport.reportNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.approveReport.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createPost.error_blankTitle.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createPost.error_userNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createPost.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createPost.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createReport.fail_reportAlreadyExist.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createReport.fail_selfReport.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.createReport.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deletePost.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deletePost.noPermission.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deletePost.notFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deletePost.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deleteReport.alreadyHandled.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deleteReport.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deleteReport.noPermission.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.deleteReport.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.getReportList.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.namyeongjun 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.rejectReport.reportNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.rejectReport.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.updatePost.blankValidation.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.updatePost.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.updatePost.noPermission.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.updatePost.postNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.updatePost.success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.소스 다운로드.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PostControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PostControllerTest.getPostListApi.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DemoApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;나명준/5주차&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/skaud/7th-BE-Blog/namyeongjun&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\skaud\7th-BE-Blog\namyeongjun\src" />
@@ -347,7 +346,8 @@
       <workItem from="1777027069393" duration="60578000" />
       <workItem from="1777559366574" duration="43966000" />
       <workItem from="1777961832957" duration="296000" />
-      <workItem from="1777962189867" duration="62109000" />
+      <workItem from="1777962189867" duration="65112000" />
+      <workItem from="1778309819601" duration="12079000" />
     </task>
     <servers />
   </component>
@@ -364,22 +364,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java</url>
-          <line>163</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/leets7th/domain/report/controller/ReportControllerTest.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/7th_BE_Blog$DemoApplication.ic" NAME="DemoApplication 커버리지 결과" MODIFIED="1774346603786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

@@ -1,6 +1,26 @@
 spring:
+
   application:
     name: demo
+
+  #redis 포트 번호 지정
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # 구글 SMTP
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: skaudwns3@gmail.com
+    password: pqozdvmserjkwqvl
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 
 #swagger yaml 경로 설정

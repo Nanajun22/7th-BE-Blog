@@ -10,7 +10,12 @@ import java.time.LocalDateTime;
 
 public interface UserRepository extends JpaRepository<User,Long> {
 
+    boolean existsByLoginId(String LoginId);
 
+    boolean existsByEmail(String email);
+
+
+    //유저 배치 작업
     @Modifying(clearAutomatically = true)
     @Query(value = "DELETE FROM users WHERE deleted_at <= :expiredTime LIMIT :batchSize",nativeQuery = true)
     int hardDeleteExpiredUser(@Param("expiredTime")LocalDateTime expiredTime,@Param("batchSize") int batchSize);
