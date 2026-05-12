@@ -15,7 +15,7 @@ public class MailCacheRepository {
 
     private static final String AUTH_PREFIX = "EmailAuth:";
 
-    private static final String VERIFY_PREFIX = "verify:";
+    private static final String VERIFY_PREFIX = "Verify:";
 
 
     // 저장

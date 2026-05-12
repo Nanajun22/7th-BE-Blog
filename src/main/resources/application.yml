@@ -27,3 +27,8 @@ spring:
 springdoc:
   swagger-ui:
     url: /restDocs/openapi3.yaml
+
+
+
+jwt:
+  secret: dkZGyRSjsm7xbFwi2J79GtdpGnYFmA/0gbFEid5bhNE=

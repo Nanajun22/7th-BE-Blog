@@ -36,15 +36,20 @@ public class User extends BaseTimeEntity {
     @Column(name = "email",unique = true, nullable = false, length = 100)
     private String email;
 
-    private User(String loginId,String name,String password,String email) {
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role",nullable = false, length = 50)
+    private UserRole role;
+
+    private User(String loginId,String name,String password,String email,UserRole role) {
         this.loginId =loginId;
         this.name = name;
         this.password = password;
         this.email = email;
+        this.role = role;
     }
 
     public static User create(String loginId,String name,String password,String email) {
-        return new User(loginId,name,password,email);
+        return new User(loginId,name,password,email,UserRole.USER);
     }
 
     public void updatePassword(String password) {

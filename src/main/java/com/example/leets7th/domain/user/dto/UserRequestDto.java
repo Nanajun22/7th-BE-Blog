@@ -20,5 +20,20 @@ public class UserRequestDto {
             String email,
 
             @NotBlank(message = "이메일 인증을 해주세요.")
-            String verifiedToken) {}
+            String verifiedToken
+    ) {
+
+    }
+    public record Login(
+            @NotBlank(message = "ID를 입력해주세요.")
+            String loginId,
+
+            @NotBlank(message = "비밀번호를 입력해주세요.")
+            String password
+    ) {
+
+    }
+
+
+
 }

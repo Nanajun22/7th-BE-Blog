@@ -9,4 +9,9 @@ public class UserResponseDto {
             return new UserCreateRes(user.getId(), user.getName());
         }
     }
+
+
+    public record TokenResult(String accessToken,String refreshToken) {}
+
+    public record AccessToken(String accessToken) {}
 }
