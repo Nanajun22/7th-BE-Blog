@@ -16,7 +16,6 @@ public class UserRequestDto {
             String password,
 
             @NotBlank(message = "이메일을 입력해주세요.")
-            @email
             String email,
 
             @NotBlank(message = "이메일 인증을 해주세요.")

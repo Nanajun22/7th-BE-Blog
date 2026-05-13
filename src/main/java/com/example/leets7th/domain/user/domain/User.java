@@ -49,7 +49,7 @@ public class User extends BaseTimeEntity {
     }
 
     public static User create(String loginId,String name,String password,String email) {
-        return new User(loginId,name,password,email,UserRole.USER);
+        return new User(loginId,name,password,email,UserRole.ROLE_USER);
     }
 
     public void updatePassword(String password) {
