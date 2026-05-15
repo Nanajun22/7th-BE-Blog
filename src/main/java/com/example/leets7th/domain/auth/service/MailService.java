@@ -38,10 +38,12 @@ public class MailService {
 
         SimpleMailMessage mail = new SimpleMailMessage();
 
-        mail.setTo(request.email()); // email 존재하는지 예외처리?
+        mail.setTo(request.email());
         mail.setSubject("인증번호 코드 발송[Leets]");
         mail.setText("인증번호:"+code);
 
+
+        // <!!!!!!!!!!!!!!!!!!메일 전송 실패시 비동기 스레드에서 예외처리 구현해야함!!!!!!>
         javaMailSender.send(mail);
     }
 

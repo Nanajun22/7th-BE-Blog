@@ -1,4 +1,4 @@
-package com.example.leets7th.domain.user.domain;
+package com.example.leets7th.domain.auth.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -8,7 +8,7 @@ import java.time.Duration;
 
 @Component
 @RequiredArgsConstructor
-public class UserCacheRepository {
+public class AuthCacheRepository {
     private final StringRedisTemplate redisTemplate;
 
     private static final String RT_PREFIX = "RT:";
