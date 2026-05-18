@@ -29,15 +29,20 @@ public class AuthController {
 
 
     @PostMapping("/reissue")
-    public ApiResponse<UserResponseDto.AccessToken> reissueToken(
-            @CookieValue(name = "refreshToken") String refreshToken,
-            HttpServletResponse response) {
+    public ApiResponse<UserResponseDto.AccessToken> reissueToken(@CookieValue(name = "refreshToken") String refreshToken,
+                                                                 HttpServletResponse response) {
 
         UserResponseDto.TokenResult tokens = authService.reissueToken(refreshToken);
 
         setRefreshTokenCookie(response,tokens.refreshToken());
 
         return ApiResponse.success(SuccessCode.GENERAL_OK, new UserResponseDto.AccessToken(tokens.accessToken()));
+
+    }
+
+    @GetMapping("/code/kakao")
+    public ApiResponse<> kakaoLogin(@RequestParam("code") String code) {
+
 
     }
 

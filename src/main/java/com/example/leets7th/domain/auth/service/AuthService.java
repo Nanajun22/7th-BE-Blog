@@ -9,6 +9,7 @@ import com.example.leets7th.domain.user.dto.UserResponseDto;
 import com.example.leets7th.domain.user.error.UserException;
 import com.example.leets7th.domain.user.service.UserService;
 import com.example.leets7th.global.code.ErrorCode;
+import com.example.leets7th.global.common.BaseCode;
 import com.example.leets7th.global.error.GlobalException;
 import com.example.leets7th.global.util.JwtUtil;
 import lombok.RequiredArgsConstructor;

@@ -1,13 +1,11 @@
 package com.example.leets7th.domain.auth.error;
 
 import com.example.leets7th.global.common.BaseCode;
-import lombok.Getter;
+import com.example.leets7th.global.error.GlobalException;
 
-@Getter
-public class AuthException extends RuntimeException {
-    private final BaseCode baseCode;
+
+public class AuthException extends GlobalException {
     public AuthException(BaseCode baseCode) {
-        super(baseCode.getMessage());
-        this.baseCode = baseCode;
+        super(baseCode);
     }
 }

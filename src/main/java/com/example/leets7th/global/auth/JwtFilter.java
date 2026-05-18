@@ -34,6 +34,7 @@ public class JwtFilter extends OncePerRequestFilter {
             String loginId = jwtUtil.getLoginId(token);
             String role = jwtUtil.getRole(token);
 
+            //authentication 구현체
             UsernamePasswordAuthenticationToken authenticationToken =
                     new UsernamePasswordAuthenticationToken(
                             loginId,
