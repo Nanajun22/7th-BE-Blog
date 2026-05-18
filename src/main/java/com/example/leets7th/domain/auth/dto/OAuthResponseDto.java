@@ -11,4 +11,25 @@ public class OAuthResponseDto {
             String accessToken
     ) {
     }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public record KakaoUserInfo(
+            @JsonProperty("id")
+            Long id,
+            @JsonProperty("kakao_account")
+            KakaoAccount kakaoAccount) {
+
+        public record KakaoAccount(
+                @JsonProperty("email")
+                String email,
+                @JsonProperty("profile")
+                Profile profile
+        ) {
+            public record Profile(@JsonProperty("nickname") String nickname) {
+
+            }
+
+        }
+
+    }
 }
