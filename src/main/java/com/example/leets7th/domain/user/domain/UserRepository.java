@@ -17,6 +17,8 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     Optional<User> findByLoginId(String LoginId);
 
+    Optional<User> findByEmail(String email);
+
     //유저 배치 작업
     @Modifying(clearAutomatically = true)
     @Query(value = "DELETE FROM users WHERE deleted_at <= :expiredTime LIMIT :batchSize",nativeQuery = true)

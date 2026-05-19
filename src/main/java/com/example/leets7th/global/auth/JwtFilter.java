@@ -31,13 +31,13 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = extractToken(request);
 
         if(token != null && jwtUtil.isValidToken(token)) {
-            String loginId = jwtUtil.getLoginId(token);
+            Long userId = Long.parseLong(jwtUtil.getUserId(token));
             String role = jwtUtil.getRole(token);
 
             //authentication 구현체
             UsernamePasswordAuthenticationToken authenticationToken =
                     new UsernamePasswordAuthenticationToken(
-                            loginId,
+                            userId,
                             null,
                             List.of(new SimpleGrantedAuthority(role))
                     );

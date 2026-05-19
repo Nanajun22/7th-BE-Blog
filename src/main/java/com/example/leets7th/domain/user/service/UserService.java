@@ -2,15 +2,12 @@ package com.example.leets7th.domain.user.service;
 
 import com.example.leets7th.domain.auth.repository.MailCacheRepository;
 import com.example.leets7th.domain.user.domain.User;
-import com.example.leets7th.domain.auth.repository.AuthCacheRepository;
 import com.example.leets7th.domain.user.domain.UserRepository;
-import com.example.leets7th.domain.user.domain.UserRole;
 import com.example.leets7th.domain.user.dto.UserRequestDto;
 import com.example.leets7th.domain.user.dto.UserResponseDto;
 import com.example.leets7th.domain.user.error.UserException;
 import com.example.leets7th.global.code.ErrorCode;
 import com.example.leets7th.global.error.GlobalException;
-import com.example.leets7th.global.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -26,8 +23,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final MailCacheRepository mailCacheRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtUtil jwtUtil;
-    private final AuthCacheRepository authCacheRepository;
+
 
 
 
@@ -82,11 +78,21 @@ public class UserService {
         return user.getName();
     }
 
+    public Optional<User> findUserById(Long userId) {
+        return userRepository.findById(userId);
+    }
+
     public Optional<User> findUserByLoginId(String loginId) {
         return userRepository.findByLoginId(loginId);
     }
 
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
 
+    public Optional<User> findUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 
 
 

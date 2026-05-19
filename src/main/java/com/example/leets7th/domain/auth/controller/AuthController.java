@@ -40,11 +40,6 @@ public class AuthController {
 
     }
 
-    @GetMapping("/code/kakao")
-    public ApiResponse<> kakaoLogin(@RequestParam("code") String code) {
-
-
-    }
 
 
     private void setRefreshTokenCookie(HttpServletResponse response,String refreshToken) {
@@ -52,7 +47,7 @@ public class AuthController {
                 .httpOnly(true)
                 .secure(true)
                 .sameSite("Strict")
-                .path("/api/users")
+                .path("/api/auth/reissue")
                 .maxAge(60*60*24*7)
                 .build();
         response.addHeader(HttpHeaders.SET_COOKIE,cookie.toString());

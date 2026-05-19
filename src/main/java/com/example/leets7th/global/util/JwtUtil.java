@@ -21,9 +21,9 @@ public class JwtUtil {
     private String secretKey;
 
     // JWT 액세스 토큰 생성
-    public String generateAccessToken(String loginId, UserRole role) {
+    public String generateAccessToken(Long userId, UserRole role) {
         return Jwts.builder()
-                .subject(loginId)
+                .subject(userId.toString())
                 .claim("role",role.name())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + 1000*60*15))
@@ -66,7 +66,7 @@ public class JwtUtil {
                 .getPayload();
     }
 
-    public String getLoginId(String token) {
+    public String getUserId(String token) {
         return parseClaims(token).getSubject();
     }
 

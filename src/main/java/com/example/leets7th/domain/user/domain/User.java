@@ -24,13 +24,13 @@ public class User extends BaseTimeEntity {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name ="login_id",nullable = false,unique = true,length = 100)
+    @Column(name ="login_id",unique = true,length = 100)
     private String loginId;
 
     @Column(name = "name",nullable = false, length = 50)
     private String name;
 
-    @Column(name = "password",nullable = false)
+    @Column(name = "password")
     private String password;
 
     @Column(name = "email",unique = true, nullable = false, length = 100)
@@ -40,6 +40,7 @@ public class User extends BaseTimeEntity {
     @Column(name = "role",nullable = false, length = 50)
     private UserRole role;
 
+    @Builder(access = AccessLevel.PRIVATE)
     private User(String loginId,String name,String password,String email,UserRole role) {
         this.loginId =loginId;
         this.name = name;
@@ -50,6 +51,14 @@ public class User extends BaseTimeEntity {
 
     public static User create(String loginId,String name,String password,String email) {
         return new User(loginId,name,password,email,UserRole.ROLE_USER);
+    }
+
+    public static User createOAuthUser(String name,String email) {
+        return User.builder()
+                .name(name)
+                .email(email)
+                .role(UserRole.ROLE_USER)
+                .build();
     }
 
     public void updatePassword(String password) {

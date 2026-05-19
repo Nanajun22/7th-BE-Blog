@@ -15,7 +15,7 @@ public class OAuthResponseDto {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public record KakaoUserInfo(
             @JsonProperty("id")
-            Long id,
+            String id,
             @JsonProperty("kakao_account")
             KakaoAccount kakaoAccount) {
 

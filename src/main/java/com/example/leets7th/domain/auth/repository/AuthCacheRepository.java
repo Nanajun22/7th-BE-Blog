@@ -15,14 +15,20 @@ public class AuthCacheRepository {
 
 
     //
-    public void saveRefreshToken(String token,String loginId) {
+    public void saveRefreshToken(String token,Long userId) {
         String key = RT_PREFIX + token;
-        redisTemplate.opsForValue().set(key,loginId, Duration.ofDays(7));
+        redisTemplate.opsForValue().set(key,userId.toString(), Duration.ofDays(7));
     }
 
-    public String getRefreshToken(String token) {
+    public Long getUserIdByRefreshToken(String token) {
         String key = RT_PREFIX + token;
-        return redisTemplate.opsForValue().get(key);
+
+        String userId = redisTemplate.opsForValue().get(key);
+
+        if(userId == null) {
+            return null;
+        }
+        return Long.valueOf(userId);
     }
 
 
